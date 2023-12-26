@@ -9,16 +9,14 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow
     {
-        private GridClickController _controller;
+        private readonly GridClickController _controller;
         
         public MainWindow()
         {
             InitializeComponent();
-            
             _controller = new GridClickPrinterController();
         }
         
-
         private void pnlMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
         {
             _controller.handle_click(new System.Collections.Generic.Dictionary<string, string>
@@ -30,19 +28,5 @@ namespace WpfApplication1
             MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void OnOpened(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void OnClosed(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
