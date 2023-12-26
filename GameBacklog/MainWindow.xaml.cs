@@ -12,7 +12,7 @@ namespace GameBacklog
     /// </summary>
     public partial class MainWindow
     {
-        private readonly IGridClickController _controller;
+        private readonly IGridClickController _gridClickController;
         private readonly GamesRepository _gameRepository;
         
         private ObservableCollection<Game> _todoGames = new ObservableCollection<Game>();
@@ -22,7 +22,7 @@ namespace GameBacklog
         public MainWindow()
         {
             InitializeComponent();
-            _controller = new GridClickPrinterController();
+            _gridClickController = new GridClickPrinterController();
             _gameRepository = new GamesRepository();
             
             ReloadGamesLists();
@@ -30,7 +30,7 @@ namespace GameBacklog
         
         private void MainGridMouseUp(object sender, MouseButtonEventArgs e)
         {
-            _controller.HandleClick(new System.Collections.Generic.Dictionary<string, string>
+            _gridClickController.HandleClick(new System.Collections.Generic.Dictionary<string, string>
             {
                 { "x", e.GetPosition(pnlMainGrid).X.ToString(CultureInfo.InvariantCulture) },
                 { "y", e.GetPosition(pnlMainGrid).Y.ToString(CultureInfo.InvariantCulture) }
