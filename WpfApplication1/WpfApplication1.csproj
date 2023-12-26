@@ -53,6 +53,7 @@
         </ApplicationDefinition>
         <Compile Include="src\controllers\GridClickController.cs" />
         <Compile Include="src\controllers\GridClickPrinterController.cs" />
+        <Compile Include="src\database\games_repository.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>

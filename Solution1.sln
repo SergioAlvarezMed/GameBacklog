@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{97718EC5-093A-4F4B-A72A-CF6A2404A0F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBacklog", "GameBacklog\GameBacklog.csproj", "{C76D1D7F-6A91-4427-905A-AB60963F7CB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{97718EC5-093A-4F4B-A72A-CF6A2404A0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97718EC5-093A-4F4B-A72A-CF6A2404A0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97718EC5-093A-4F4B-A72A-CF6A2404A0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76D1D7F-6A91-4427-905A-AB60963F7CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76D1D7F-6A91-4427-905A-AB60963F7CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76D1D7F-6A91-4427-905A-AB60963F7CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76D1D7F-6A91-4427-905A-AB60963F7CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
