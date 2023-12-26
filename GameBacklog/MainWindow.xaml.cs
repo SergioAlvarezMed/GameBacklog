@@ -30,7 +30,7 @@ namespace GameBacklog
         
         private void MainGridMouseUp(object sender, MouseButtonEventArgs e)
         {
-            _controller.handle_click(new System.Collections.Generic.Dictionary<string, string>
+            _controller.HandleClick(new System.Collections.Generic.Dictionary<string, string>
             {
                 { "x", e.GetPosition(pnlMainGrid).X.ToString(CultureInfo.InvariantCulture) },
                 { "y", e.GetPosition(pnlMainGrid).Y.ToString(CultureInfo.InvariantCulture) }
