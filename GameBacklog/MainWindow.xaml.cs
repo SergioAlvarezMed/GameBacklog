@@ -13,7 +13,7 @@ namespace GameBacklog
     public partial class MainWindow
     {
         private readonly GridClickController _controller;
-        private readonly GamesRepository _game_repository;
+        private readonly GamesRepository _gameRepository;
         
         private ObservableCollection<Game> _todoGames = new ObservableCollection<Game>();
         private ObservableCollection<Game> _inProgressGames = new ObservableCollection<Game>();
@@ -23,7 +23,7 @@ namespace GameBacklog
         {
             InitializeComponent();
             _controller = new GridClickPrinterController();
-            _game_repository = new GamesRepository();
+            _gameRepository = new GamesRepository();
             
             ReloadGamesLists();
         }
@@ -51,9 +51,9 @@ namespace GameBacklog
         {
             System.Console.WriteLine("Reloading games lists");
             
-            _todoGames = new ObservableCollection<Game>(_game_repository.get_not_started_games());
-            _inProgressGames = new ObservableCollection<Game>(_game_repository.get_in_progress_games());
-            _doneGames = new ObservableCollection<Game>(_game_repository.get_done_games());
+            _todoGames = new ObservableCollection<Game>(_gameRepository.GetNotStartedGames());
+            _inProgressGames = new ObservableCollection<Game>(_gameRepository.GetInProgressGames());
+            _doneGames = new ObservableCollection<Game>(_gameRepository.GetDoneGames());
             
             TodoGames.ItemsSource = _todoGames;
             InProgressGames.ItemsSource = _inProgressGames;
@@ -67,7 +67,7 @@ namespace GameBacklog
             var game = (Game) TodoGames.SelectedItem;
             if (game == null) return;
             
-            GamesRepository.update_game_status(game.Name, "In Progress");
+            GamesRepository.UpdateGameStatus(game.Name, "In Progress");
             ReloadGamesLists();
         }
     }

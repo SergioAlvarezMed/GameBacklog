@@ -31,7 +31,7 @@ namespace GameBacklog.database
             connection.Close();
         }
         
-        public List<Game> get_not_started_games()
+        public List<Game> GetNotStartedGames()
         {
             CreateTableIfNotExists();
             
@@ -52,7 +52,7 @@ namespace GameBacklog.database
             return games;
         }
 
-        public List<Game> get_in_progress_games()
+        public List<Game> GetInProgressGames()
         {
             CreateTableIfNotExists();
             
@@ -73,7 +73,7 @@ namespace GameBacklog.database
             return games;
         }
 
-        public List<Game> get_done_games()
+        public List<Game> GetDoneGames()
         {
             CreateTableIfNotExists();
             
@@ -94,7 +94,7 @@ namespace GameBacklog.database
             return games;
         }
 
-        public static void update_game_status(string gameName, string status)
+        public static void UpdateGameStatus(string gameName, string status)
         {
             CreateTableIfNotExists();
             
