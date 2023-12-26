@@ -1,0 +1,41 @@
+<Window x:Class="GameBacklog.AddGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:GameBacklog"
+        mc:Ignorable="d"
+        Title="New game parameters?"
+        Height="100"
+        Width="300"
+        ResizeMode="NoResize">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Add a textbox for the user to input the game name and a button that says Add -->
+        <TextBox Grid.Column="0" Grid.Row="0"
+                 x:Name="GameNameTextBox"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 TextWrapping="Wrap"
+                 Text=""
+                 VerticalAlignment="Center"
+                 Width="120" />
+        <Button Grid.Column="1" Grid.Row="0"
+                x:Name="AddGameButton"
+                Content="Add"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="120"
+                Click="AddGameButton_Click" />
+
+    </Grid>
+</Window>
