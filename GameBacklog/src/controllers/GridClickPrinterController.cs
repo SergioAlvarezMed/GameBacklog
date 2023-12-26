@@ -1,6 +1,6 @@
 namespace GameBacklog.controllers
 {
-    public class GridClickPrinterController : GridClickController
+    public class GridClickPrinterController : IGridClickController
     {
         private readonly string _resourceText = "Clicked on: ";
 

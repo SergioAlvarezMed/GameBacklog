@@ -12,7 +12,7 @@ namespace GameBacklog
     /// </summary>
     public partial class MainWindow
     {
-        private readonly GridClickController _controller;
+        private readonly IGridClickController _controller;
         private readonly GamesRepository _gameRepository;
         
         private ObservableCollection<Game> _todoGames = new ObservableCollection<Game>();
