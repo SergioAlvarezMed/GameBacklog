@@ -56,7 +56,7 @@
             </Grid.RowDefinitions>
 
             <Button Grid.Column="0" Content="Add" Click="OpenAddGameWindow" />
-            <Button Grid.Column="1" Content="Set in progress" Click="MoveToInProgress" />
+            <Button Grid.Column="1" Content="Set in progress" Click="MoveToInProgressFromBacklog" />
         </Grid>
 
         <Grid Grid.Column="1" Grid.Row="2" Background="LightGreen" Name="pnlInProgressButtons">
@@ -71,8 +71,8 @@
             </Grid.RowDefinitions>
 
             <!-- Create 2 buttons in the grid -->
-            <Button Content="Back to backlog" Grid.Column="0" />
-            <Button Content="Set as done" Grid.Column="1" />
+            <Button Content="Back to backlog" Grid.Column="0" Click="MoveToBacklog" />
+            <Button Content="Set as done" Grid.Column="1" Click="MoveToDoneFromInProgress"/>
         </Grid>
         <Grid Grid.Column="2" Grid.Row="2" Background="LightGreen" Name="pnlDoneButtons">
 
@@ -86,8 +86,8 @@
             </Grid.RowDefinitions>
 
             <!-- Create one button that says delete -->
-            <Button Content="Back to in progress" Grid.Column="0" />
-            <Button Content="Delete" Grid.Column="1" />
+            <Button Content="Back to in progress" Grid.Column="0" Click="MoveToInProgessFromDone"/>
+            <Button Content="Delete" Grid.Column="1" Click="DeleteDoneElement" />
         </Grid>
 
     </Grid>

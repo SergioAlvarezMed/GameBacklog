@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using GameBacklog.controllers;
 using GameBacklog.database;
+using GameBacklog.models;
 
 namespace GameBacklog
 {
@@ -41,13 +42,13 @@ namespace GameBacklog
         {
             System.Console.WriteLine("Add content button clicked");
             
-            var addGameWindow = new AddGameWindow();
+            var addGameWindow = new AddGameWindow(this);
             addGameWindow.Show();
             
             ReloadGamesLists();
         }
-        
-        private void ReloadGamesLists()
+
+        public void ReloadGamesLists()
         {
             System.Console.WriteLine("Reloading games lists");
             
@@ -60,11 +61,55 @@ namespace GameBacklog
             DoneGames.ItemsSource = _doneGames;
         }
 
-        private void MoveToInProgress(object sender, RoutedEventArgs e)
+        private void MoveToInProgressFromBacklog(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Move to in progress button clicked");
             
             var game = (Game) TodoGames.SelectedItem;
+            if (game == null) return;
+            
+            GamesRepository.UpdateGameStatus(game.Name, "In Progress");
+            ReloadGamesLists();
+        }
+
+        private void MoveToBacklog(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Move to backlog button clicked");
+            
+            var game = (Game) InProgressGames.SelectedItem;
+            if (game == null) return;
+            
+            GamesRepository.UpdateGameStatus(game.Name, "Not Started");
+            ReloadGamesLists();
+        }
+
+        private void MoveToDoneFromInProgress(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Move to done button clicked");
+            
+            var game = (Game) InProgressGames.SelectedItem;
+            if (game == null) return;
+            
+            GamesRepository.UpdateGameStatus(game.Name, "Done");
+            ReloadGamesLists();
+        }
+
+        private void DeleteDoneElement(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Delete element button clicked");
+            
+            var game = (Game) DoneGames.SelectedItem;
+            if (game == null) return;
+            
+            GamesRepository.DeleteGame(((Game) DoneGames.SelectedItem).Name);
+            ReloadGamesLists();
+        }
+
+        private void MoveToInProgessFromDone(object sender, RoutedEventArgs e)
+        {  
+            System.Console.WriteLine("Move to in progress button clicked");
+            
+            var game = (Game) DoneGames.SelectedItem;
             if (game == null) return;
             
             GamesRepository.UpdateGameStatus(game.Name, "In Progress");

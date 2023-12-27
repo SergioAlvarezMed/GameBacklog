@@ -1,4 +1,4 @@
-namespace GameBacklog.database;
+namespace GameBacklog.models;
 
 public record Game(string Name, string Status)
 {

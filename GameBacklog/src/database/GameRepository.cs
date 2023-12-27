@@ -1,3 +1,4 @@
+using GameBacklog.models;
 using Microsoft.Data.Sqlite;
 namespace GameBacklog.database
 {
@@ -106,6 +107,20 @@ namespace GameBacklog.database
             updateGameCommand.Parameters.AddWithValue("$name", gameName);
             updateGameCommand.Parameters.AddWithValue("$status", status);
             updateGameCommand.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void DeleteGame(string name)
+        {
+            CreateTableIfNotExists();
+            
+            var connection = new SqliteConnection("Data Source=database.db");
+            
+            connection.Open();
+            var deleteGameCommand = connection.CreateCommand();
+            deleteGameCommand.CommandText = "DELETE FROM games WHERE name = $name";
+            deleteGameCommand.Parameters.AddWithValue("$name", name);
+            deleteGameCommand.ExecuteNonQuery();
             connection.Close();
         }
     }
