@@ -8,5 +8,5 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=WpfApplication1_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=24d1d3a6_002Dc31c_002D492f_002Dba01_002De4c04e90b271_0023WpfApplication1/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=97718ec5_002D093a_002D4f4b_002Da72a_002Dcf6a2404a0f2_0023ConsoleApplication1/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	
+	</wpf:ResourceDictionary>
